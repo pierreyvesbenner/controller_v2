@@ -50,4 +50,24 @@ basic.forever(function () {
         basic.pause(100)
         basic.clearScreen()
     }
+    if (Kitronik_Game_Controller.buttonIsPressed(Kitronik_Game_Controller.ControllerButtonPins.Fire1)) {
+        radio.sendNumber(15)
+        Kitronik_Game_Controller.setBuzzerPin()
+        basic.showLeds(`
+            . . . . .
+            . # # # .
+            . # . # .
+            . # # # .
+            . . . . .
+            `)
+        basic.pause(100)
+        basic.clearScreen()
+    }
+    if (Kitronik_Game_Controller.buttonIsPressed(Kitronik_Game_Controller.ControllerButtonPins.Fire2)) {
+        radio.sendNumber(16)
+        Kitronik_Game_Controller.setBuzzerPin()
+        basic.showIcon(IconNames.Ghost)
+        basic.pause(100)
+        basic.clearScreen()
+    }
 })
